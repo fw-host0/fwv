@@ -1,0 +1,1011 @@
+---
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Fisher Walling Visibility — AI Visibility Optimization</title>
+  <meta name="description" content="I audit your brand's visibility across ChatGPT, Claude, and Perplexity — and build the content strategy to move the needle. Data-driven AI visibility optimization for founders and SaaS companies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0f0f0f;
+      --white: #f9f9f7;
+      --accent: #0047FF;
+      --accent-dim: rgba(0,71,255,0.1);
+      --muted: #888;
+      --border: rgba(15,15,15,0.1);
+      --display: 'Space Grotesk', sans-serif;
+      --mono: 'Space Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--display);
+      background: var(--white);
+      color: var(--black);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(249,249,247,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--black); }
+
+    .nav-cta {
+      background: var(--accent) !important;
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: 4px;
+      font-weight: 500 !important;
+      transition: opacity 0.2s !important;
+    }
+
+    .nav-cta:hover { opacity: 0.85 !important; color: var(--white) !important; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      padding: 9rem 3rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline .blue { color: var(--accent); }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 420px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.85rem 1.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+      font-family: var(--display);
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-ghost {
+      display: inline-block;
+      color: var(--black);
+      padding: 0.85rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 400;
+      transition: border-color 0.2s;
+    }
+
+    .btn-ghost:hover { border-color: var(--black); }
+
+    /* TERMINAL */
+    .terminal {
+      background: #0d0d0d;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.18);
+    }
+
+    .terminal-bar {
+      background: #1c1c1c;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+
+    .t-title {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.25);
+      margin-left: 0.5rem;
+    }
+
+    .terminal-body {
+      padding: 1.5rem;
+      min-height: 300px;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      line-height: 1.9;
+    }
+
+.t-line { display: block; }
+
+.t-cmd { display: block; color: rgba(255,255,255,0.85) !important; }
+.t-info { display: block; color: #4d9eff !important; }
+.t-ok { display: block; color: #28c840 !important; }
+.t-result { display: block; color: #febc2e !important; }
+.t-dim { display: block; color: rgba(255,255,255,0.2) !important; }
+
+    .cursor {
+      display: inline-block;
+      width: 7px; height: 13px;
+      background: var(--accent);
+      animation: blink 1s infinite;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+
+    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+
+    /* STATS */
+    .stats-bar {
+      background: var(--black);
+      padding: 2.5rem 3rem;
+    }
+
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .stat {
+      padding: 0 2rem;
+      border-left: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .stat:first-child { border-left: none; padding-left: 0; }
+
+    .stat-num {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-num .a { color: var(--accent); }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+    }
+
+    /* SECTIONS */
+    .section { padding: 6rem 3rem; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    /* PROBLEM */
+    .problem-section { background: #f0ede6; }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .problem-copy p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-weight: 300;
+    }
+
+    .problem-copy strong { color: var(--black); font-weight: 600; }
+
+    .chat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .chat-icon {
+      width: 22px; height: 22px;
+      background: var(--black);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.5rem;
+      color: var(--white);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .chat-platform { font-size: 0.8rem; font-weight: 500; }
+
+    .chat-body { padding: 1.25rem; }
+
+    .chat-q {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chat-a { font-size: 0.82rem; line-height: 1.75; }
+
+    .chat-hi {
+      background: var(--accent-dim);
+      color: var(--accent);
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .chat-fade { color: rgba(15,15,15,0.3); }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      transition: background 0.2s;
+    }
+
+    .service-card:hover { background: #f0ede6; }
+
+    .service-tier {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .service-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .service-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .service-price {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-price span {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-left: 4px;
+    }
+
+    .service-list {
+      list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .service-list li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 0.3rem 0;
+      display: flex;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .service-list li::before {
+      content: '→';
+      color: var(--accent);
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      margin-top: 3px;
+    }
+
+    /* CASE STUDY */
+    .case-section { background: #f0ede6; }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .case-copy p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-weight: 300;
+    }
+
+    .case-quote {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.4;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+      letter-spacing: -0.01em;
+    }
+
+    .score-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .score-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .score-platform {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .score-vals {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .score-before {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: rgba(15,15,15,0.18);
+      text-decoration: line-through;
+    }
+
+    .score-arrow { color: var(--muted); font-size: 0.75rem; }
+
+    .score-after {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .score-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .score-card.overall {
+      grid-column: span 2;
+      background: var(--black);
+      border-color: transparent;
+    }
+
+    .score-card.overall .score-platform { color: rgba(255,255,255,0.3); }
+    .score-card.overall .score-before { color: rgba(255,255,255,0.15); }
+    .score-card.overall .score-after { color: #4d9eff; }
+    .score-card.overall .score-arrow { color: rgba(255,255,255,0.2); }
+    .score-card.overall .score-label { color: rgba(255,255,255,0.3); }
+
+    /* METHODOLOGY */
+    .method-section { background: var(--black); color: var(--white); }
+    .method-section .eyebrow { color: rgba(255,255,255,0.3); }
+    .method-section .section-title { color: var(--white); }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 3rem;
+    }
+
+    .method-item {
+      padding: 2rem 2rem 2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .method-item:nth-child(n+4) { border-bottom: none; }
+
+    .method-num {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .method-num-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .method-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* PROCESS */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      margin-top: 3.5rem;
+    }
+
+    .process-step {}
+
+    .step-num {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .step-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--accent);
+      padding: 7rem 3rem;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      max-width: 640px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.1;
+    }
+
+    .cta-section p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 400px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: var(--white);
+      color: var(--accent);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: opacity 0.2s;
+      font-family: var(--display);
+      letter-spacing: -0.01em;
+    }
+
+    .btn-white:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem 3rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+
+    .footer-logo {
+      font-family: var(--display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      #hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 3rem; }
+      .section { padding: 4rem 1.5rem; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .stat { border-left: none; padding-left: 0; }
+      .problem-grid, .case-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .services-grid, .method-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .score-card.overall { grid-column: span 1; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Fisher Walling <span>Visibility</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#case-study">Case Study</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#cta" class="nav-cta">Get an audit</a></li>
+  </ul>
+</nav>
+
+<div style="max-width:1200px;margin:0 auto;">
+  <section id="hero">
+    <div>
+      <p class="hero-eyebrow">// AI Visibility Optimization</p>
+      <h1 class="hero-headline">When buyers ask AI who to hire, your brand should be the <span class="blue">answer.</span></h1>
+      <p class="hero-sub">Most businesses are invisible to ChatGPT, Claude, and Perplexity. I find out exactly where you stand and build the content strategy to fix it — with data, not guesswork.</p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">Get your audit</a>
+        <a href="#process" class="btn-ghost">See how it works</a>
+      </div>
+    </div>
+    <div class="terminal">
+      <div class="terminal-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="t-title">audit_runner.py — ZenFounder</span>
+      </div>
+      <div class="terminal-body" id="term-out"></div>
+    </div>
+  </section>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-num">300</span>
+      <span class="stat-label">API calls<br>per audit</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">AI platforms<br>tracked</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">5<span class="a">×</span></span>
+      <span class="stat-label">Runs per prompt<br>for accuracy</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">0.737</span>
+      <span class="stat-label">YouTube<br>correlation</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">43<span class="a">%</span></span>
+      <span class="stat-label">ChatGPT cites<br>listicles</span>
+    </div>
+  </div>
+</div>
+
+<section class="section problem-section" id="problem">
+  <div class="section-inner">
+    <span class="eyebrow">// The problem</span>
+    <h2 class="section-title">Google rankings and AI citations are two completely different games.</h2>
+    <div class="problem-grid">
+      <div class="problem-copy">
+        <p>67% of B2B buyers now use ChatGPT or Perplexity to research vendors before making a decision. <strong>AI-sourced traffic converts up to 9x higher than traditional search.</strong></p>
+        <p>28.3% of ChatGPT's most-cited pages have zero Google organic visibility. That means your SEO rank tells you almost nothing about your AI visibility. They are completely separate discovery layers.</p>
+        <p>Most businesses have no idea where they stand. I built the tooling to find out — and the methodology to do something about it.</p>
+      </div>
+      <div class="chat-card">
+        <div class="chat-header">
+          <div class="chat-icon">AI</div>
+          <span class="chat-platform">ChatGPT · live query</span>
+        </div>
+        <div class="chat-body">
+          <p class="chat-q">"Who should I hire as a mental health professional if I'm a startup founder?"</p>
+          <div class="chat-a">
+            <p>For startup founders, the most recommended practitioners combine clinical credentials with direct startup experience.</p>
+            <br>
+            <p>1. <span class="chat-hi">Dr. Sherry Walling — ZenFounder</span><br>A clinical psychologist with a decade working specifically with founders. Hosts ZenFounder podcast (1M+ downloads). Writes for Fortune.</p>
+            <br>
+            <p class="chat-fade">2. Chandler Chang, PhD — Therapy Lab...</p>
+            <p class="chat-fade">3. Momentum Psychology...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-inner">
+    <span class="eyebrow">// Services</span>
+    <h2 class="section-title">Three ways to own your AI visibility.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <p class="service-tier">Tier 01 — One time</p>
+        <h3 class="service-name">AI Footprint Audit</h3>
+        <p class="service-desc">300 API calls across ChatGPT, Claude, and Perplexity. You find out exactly where you're visible, where you're not, and why.</p>
+        <div class="service-price">$500 <span>one-time</span></div>
+        <ul class="service-list">
+          <li>20 prompts x 5 runs for statistical validity</li>
+          <li>Per-prompt visibility breakdown</li>
+          <li>Zero-visibility gap analysis</li>
+          <li>Content and citation recommendations</li>
+          <li>PDF audit report</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <p class="service-tier">Tier 02 — Monthly</p>
+        <h3 class="service-name">Visibility Retainer</h3>
+        <p class="service-desc">Ongoing content and strategy to move your scores month over month. Written, published, and tracked.</p>
+        <div class="service-price">$1,500 <span>per month</span></div>
+        <ul class="service-list">
+          <li>Monthly re-audit to track progress</li>
+          <li>2 targeted articles per month</li>
+          <li>FAQ sections for service pages</li>
+          <li>Press citation integration</li>
+          <li>YouTube embed strategy</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <p class="service-tier">Tier 03 — Performance</p>
+        <h3 class="service-name">Partnership</h3>
+        <p class="service-desc">Lower base, performance upside. I earn more as your scores improve. Fully aligned incentives.</p>
+        <div class="service-price">Custom <span>pricing</span></div>
+        <ul class="service-list">
+          <li>Everything in Tier 02</li>
+          <li>Performance-based fee structure</li>
+          <li>Full content execution</li>
+          <li>Digital PR and podcast pitching</li>
+          <li>Quarterly strategy sessions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section case-section" id="case-study">
+  <div class="section-inner">
+    <span class="eyebrow">// Case study — ZenFounder</span>
+    <h2 class="section-title">From invisible to recommended.</h2>
+    <div class="case-grid">
+      <div class="case-copy">
+        <p>Dr. Sherry Walling is a clinical psychologist who has spent over a decade working with startup founders. She hosts the ZenFounder podcast (1M+ downloads), writes for Fortune and Entrepreneur, and has been featured in the New York Times.</p>
+        <p>Despite being one of the most credentialed practitioners in her niche, she was scoring 20% overall AI visibility — invisible on 7 of 20 target prompts across all three platforms.</p>
+        <blockquote class="case-quote">She was the right answer to questions AI wasn't citing her for.</blockquote>
+        <p>Full audit, zero-visibility prompt identification, targeted content strategy with press citation integration, FAQ optimization, and YouTube embed strategy. Results tracked across 300 API calls per cycle.</p>
+      </div>
+      <div class="score-grid">
+        <div class="score-card">
+          <p class="score-platform">ChatGPT</p>
+          <div class="score-vals">
+            <span class="score-before">21%</span>
+            <span class="score-arrow">→</span>
+            <span class="score-after">TBD</span>
+          </div>
+          <p class="score-label">Visibility score</p>
+        </div>
+        <div class="score-card">
+          <p class="score-platform">Claude</p>
+          <div class="score-vals">
+            <span class="score-before">30%</span>
+            <span class="score-arrow">→</span>
+            <span class="score-after">TBD</span>
+          </div>
+          <p class="score-label">Visibility score</p>
+        </div>
+        <div class="score-card">
+          <p class="score-platform">Perplexity</p>
+          <div class="score-vals">
+            <span class="score-before">10%</span>
+            <span class="score-arrow">→</span>
+            <span class="score-after">TBD</span>
+          </div>
+          <p class="score-label">Visibility score</p>
+        </div>
+        <div class="score-card overall">
+          <p class="score-platform">Overall</p>
+          <div class="score-vals">
+            <span class="score-before">20%</span>
+            <span class="score-arrow">→</span>
+            <span class="score-after">In progress</span>
+          </div>
+          <p class="score-label">Re-audit after content push</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section method-section" id="methodology">
+  <div class="section-inner">
+    <span class="eyebrow">// Why it works</span>
+    <h2 class="section-title">Built on research. Not assumptions.</h2>
+    <div class="method-grid">
+      <div class="method-item">
+        <p class="method-num">43.8%</p>
+        <p class="method-num-label">of ChatGPT citations</p>
+        <p class="method-desc">Come from "best X" listicle format. Content is engineered to match what AI actually cites, not what ranks on Google.</p>
+      </div>
+      <div class="method-item">
+        <p class="method-num">0.737</p>
+        <p class="method-num-label">YouTube correlation</p>
+        <p class="method-desc">Highest correlation with AI brand visibility of any factor studied. Higher than backlinks, domain rating, or page count.</p>
+      </div>
+      <div class="method-item">
+        <p class="method-num">28.3%</p>
+        <p class="method-num-label">zero Google overlap</p>
+        <p class="method-desc">Of ChatGPT's most-cited pages rank nowhere on Google. AI visibility is a completely separate discovery layer.</p>
+      </div>
+      <div class="method-item">
+        <p class="method-num">4.8x</p>
+        <p class="method-num-label">freshness multiplier</p>
+        <p class="method-desc">Sites updated every 90 days receive 4.8x more citations. Content freshness is one of the highest-leverage ongoing signals.</p>
+      </div>
+      <div class="method-item">
+        <p class="method-num">9x</p>
+        <p class="method-num-label">conversion rate</p>
+        <p class="method-desc">AI-sourced visitors convert up to 9x higher than traditional search. Visibility in AI answers is a direct revenue lever.</p>
+      </div>
+      <div class="method-item">
+        <p class="method-num">300</p>
+        <p class="method-num-label">calls per audit</p>
+        <p class="method-desc">Every prompt run 5 times across 3 platforms. Single-run audits produce unreliable data. Statistical validity requires repetition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="section-inner">
+    <span class="eyebrow">// Process</span>
+    <h2 class="section-title">How I move the needle.</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <p class="step-num">// 01</p>
+        <h3 class="step-title">Audit</h3>
+        <p class="step-desc">300 API calls. 20 prompts. 5 runs each. Clean data with no chat history or personalization bias. You get a visibility score and a per-prompt breakdown.</p>
+      </div>
+      <div class="process-step">
+        <p class="step-num">// 02</p>
+        <h3 class="step-title">Research</h3>
+        <p class="step-desc">Identify zero-visibility prompts. Map content formats AI cites in your niche. Analyze authority signals you're missing versus who's already getting cited.</p>
+      </div>
+      <div class="process-step">
+        <p class="step-num">// 03</p>
+        <h3 class="step-title">Execute</h3>
+        <p class="step-desc">Targeted articles, FAQ sections, press citation integration, YouTube embed strategy, digital PR. Engineered for AI citation, not just Google ranking.</p>
+      </div>
+      <div class="process-step">
+        <p class="step-num">// 04</p>
+        <h3 class="step-title">Track</h3>
+        <p class="step-desc">Monthly re-audits with the same methodology. You see exactly how your scores move and what's driving the change. Before and after, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="cta">
+  <h2>Find out where AI stands on your brand.</h2>
+  <p>Start with an audit. You'll know exactly how visible you are across ChatGPT, Claude, and Perplexity.</p>
+  <a href="mailto:fisher@fisherwalling.com" class="btn-white">Get your audit →</a>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo">Fisher Walling <span>Visibility</span></a>
+  <p class="footer-copy">AI Visibility Optimization · Built on real data</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const lines = [
+    { t: '$ python audit_runner.py --client zenfounder', color: 'rgba(255,255,255,0.85)', d: 0 },
+    { t: '→ Loading 20 target prompts...', color: '#4d9eff', d: 700 },
+    { t: '→ Connecting to ChatGPT API...', color: '#4d9eff', d: 1200 },
+    { t: '→ Connecting to Claude API...', color: '#4d9eff', d: 1600 },
+    { t: '→ Connecting to Perplexity API...', color: '#4d9eff', d: 2000 },
+    { t: '[1/5] "Who should I hire as a mental health professional..."', color: 'rgba(255,255,255,0.3)', d: 2600 },
+    { t: '  ChatGPT    → MENTIONED ✓', color: '#28c840', d: 3000 },
+    { t: '  Claude     → MENTIONED ✓', color: '#28c840', d: 3300 },
+    { t: '  Perplexity → not mentioned', color: 'rgba(255,255,255,0.45)', d: 3600 },
+    { t: '[1/5] "Who are the top coaches for founder burnout?"', color: 'rgba(255,255,255,0.3)', d: 4100 },
+    { t: '  ChatGPT    → not mentioned', color: 'rgba(255,255,255,0.45)', d: 4500 },
+    { t: '  Claude     → not mentioned', color: 'rgba(255,255,255,0.45)', d: 4800 },
+    { t: '  Perplexity → not mentioned', color: 'rgba(255,255,255,0.45)', d: 5100 },
+    { t: '... running 280 more calls ...', color: 'rgba(255,255,255,0.3)', d: 5500 },
+    { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.15)', d: 6000 },
+    { t: 'AUDIT COMPLETE — ZenFounder', color: '#febc2e', d: 6300 },
+    { t: '  ChatGPT visibility:    21%', color: '#febc2e', d: 6600 },
+    { t: '  Claude visibility:     30%', color: '#febc2e', d: 6900 },
+    { t: '  Perplexity visibility: 10%', color: '#febc2e', d: 7200 },
+    { t: '  Overall score:         20%', color: '#febc2e', d: 7500 },
+    { t: '  Zero-visibility gaps:  7 prompts', color: '#febc2e', d: 7800 },
+    { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.15)', d: 8100 },
+  ];
+  const out = document.getElementById('term-out');
+  let cursor = document.createElement('span');
+  cursor.style.cssText = 'display:inline-block;width:7px;height:13px;background:#0047FF;animation:blink 1s infinite;vertical-align:middle;margin-left:2px;';
+  lines.forEach(({ t, color, d }) => {
+    setTimeout(() => {
+      if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
+      const line = document.createElement('span');
+      line.style.cssText = `display:block;color:${color};font-family:'Space Mono',monospace;font-size:0.7rem;line-height:1.9;`;
+      line.textContent = t;
+      out.appendChild(line);
+      out.appendChild(cursor);
+      out.scrollTop = out.scrollHeight;
+    }, d);
+  });
+});
+</script>
+
+</body>
+</html>
