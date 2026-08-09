@@ -8,10 +8,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "npm run build && wrangler dev",
+    "preview": "astro preview",
     "astro": "astro",
-    "generate-types": "wrangler types",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "astro build && wrangler deploy --no-bundle dist"
   },
   "dependencies": {
     "astro": "^7.0.9"
