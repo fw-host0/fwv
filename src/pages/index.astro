@@ -283,7 +283,7 @@
     }
 
     /* PROBLEM */
-    .problem-section { background: #f0ede6; }
+    .problem-section { background: var(--black); color: var(--white); }
 
     .problem-grid {
       display: grid;
@@ -293,7 +293,7 @@
       margin-top: 3rem;
     }
 
-    .problem-copy p {
+    .problem-copy p { color: rgba(255,255,255,0.6) !important; } .problem-copy-old {
       font-size: 0.95rem;
       color: var(--muted);
       line-height: 1.8;
@@ -727,31 +727,6 @@
       <div class="terminal-body" id="term-out"></div>
     </div>
   </section>
-</div>
-
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat">
-      <span class="stat-num">300</span>
-      <span class="stat-label">API calls<br>per audit</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">4</span>
-      <span class="stat-label">AI platforms<br>tracked</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">5<span class="a">×</span></span>
-      <span class="stat-label">Runs per prompt<br>for accuracy</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">0.737</span>
-      <span class="stat-label">YouTube<br>correlation</span>
-    </div>
-   <div class="stat">
-  <span class="stat-num">23<span class="a">×</span></span>
-<span class="stat-label">higher conversion<br>than organic search</span>
-</div>
-  </div>
 </div>
 
 <section class="section problem-section" id="problem">
