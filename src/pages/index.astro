@@ -722,7 +722,7 @@
         <div class="dot dot-r"></div>
         <div class="dot dot-y"></div>
         <div class="dot dot-g"></div>
-        <span class="t-title">audit_runner.py — ZenFounder</span>
+        <span class="t-title">audit_runner.py — [your-brand]</span>
       </div>
       <div class="terminal-body" id="term-out"></div>
     </div>
@@ -984,28 +984,26 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const lines = [
-    { t: '$ python audit_runner.py --client zenfounder', color: 'rgba(255,255,255,0.85)', d: 0 },
+    { t: '$ python audit_runner.py --client [your-brand]', color: 'rgba(255,255,255,0.85)', d: 0 },
     { t: '→ Loading 20 target prompts...', color: '#4d9eff', d: 700 },
     { t: '→ Connecting to ChatGPT API...', color: '#4d9eff', d: 1200 },
     { t: '→ Connecting to Claude API...', color: '#4d9eff', d: 1600 },
     { t: '→ Connecting to Perplexity API...', color: '#4d9eff', d: 2000 },
-    { t: '[1/5] "Who should I hire as a mental health professional..."', color: 'rgba(255,255,255,0.3)', d: 2600 },
+    { t: '[1/5] "Who should I hire for [your niche]?"', color: 'rgba(255,255,255,0.3)', d: 2600 },
     { t: '  ChatGPT    → MENTIONED ✓', color: '#28c840', d: 3000 },
     { t: '  Claude     → MENTIONED ✓', color: '#28c840', d: 3300 },
     { t: '  Perplexity → not mentioned', color: 'rgba(255,255,255,0.45)', d: 3600 },
-    { t: '[1/5] "Who are the top coaches for founder burnout?"', color: 'rgba(255,255,255,0.3)', d: 4100 },
+    { t: '[1/5] "What are the best [your category] options?"', color: 'rgba(255,255,255,0.3)', d: 4100 },
     { t: '  ChatGPT    → not mentioned', color: 'rgba(255,255,255,0.45)', d: 4500 },
     { t: '  Claude     → not mentioned', color: 'rgba(255,255,255,0.45)', d: 4800 },
     { t: '  Perplexity → not mentioned', color: 'rgba(255,255,255,0.45)', d: 5100 },
     { t: '... running 280 more calls ...', color: 'rgba(255,255,255,0.3)', d: 5500 },
     { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.15)', d: 6000 },
-    { t: 'AUDIT COMPLETE — ZenFounder', color: '#febc2e', d: 6300 },
-    { t: '  ChatGPT visibility:    21%', color: '#febc2e', d: 6600 },
-    { t: '  Claude visibility:     30%', color: '#febc2e', d: 6900 },
-    { t: '  Perplexity visibility: 10%', color: '#febc2e', d: 7200 },
-    { t: '  Overall score:         20%', color: '#febc2e', d: 7500 },
-    { t: '  Zero-visibility gaps:  7 prompts', color: '#febc2e', d: 7800 },
-    { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.15)', d: 8100 },
+    { t: 'AUDIT COMPLETE — [your brand]', color: '#febc2e', d: 6300 },
+    { t: '  Scanning results...', color: '#febc2e', d: 6600 },
+    { t: '  Zero-visibility gaps found.', color: '#febc2e', d: 7000 },
+    { t: '  Get in touch to see your scores.', color: '#4d9eff', d: 7500 },
+    { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.15)', d: 8000 },
   ];
   const out = document.getElementById('term-out');
   let cursor = document.createElement('span');
