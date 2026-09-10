@@ -986,7 +986,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const lines = [
-    { t: '$ python audit_runner.py --client "[your brand]"', color: 'rgba(255,255,255,1)', d: 0 },
+    { t: '$ python audit_runner.py --client [your brand]', color: 'rgba(255,255,255,1)', d: 0 },
     { t: '→ Loading 20 target prompts...', color: '#4d9eff', d: 700 },
     { t: '→ Connecting to ChatGPT API...', color: '#4d9eff', d: 1100 },
     { t: '→ Connecting to Claude API...', color: '#4d9eff', d: 1500 },
@@ -1002,12 +1002,12 @@ document.addEventListener('DOMContentLoaded', () => {
     { t: '  Claude     → NOT MENTIONED x', color: '#ff4444', d: 5300 },
     { t: '  Perplexity → MENTIONED ✓', color: '#28c840', d: 5600 },
     { t: '  Gemini     → NOT MENTIONED x', color: '#ff4444', d: 5900 },
-    { t: '... running 280 more calls ...', color: 'rgba(255,255,255,0.95)', d: 6300 },
+    { t: '... running 72 more checks ...', color: 'rgba(255,255,255,0.95)', d: 6300 },
     { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.5)', d: 6800 },
-    { t: 'AUDIT COMPLETE — [your brand]', color: '#febc2e', d: 7100 },
+    { t: 'AUDIT COMPLETE: [your brand]', color: '#febc2e', d: 7100 },
     { t: '  Scanning results...', color: '#febc2e', d: 7400 },
-    { t: '  Critical visibility gaps found.', color: '#febc2e', d: 7800 },
-    { t: '  Get in touch to see your scores.', color: '#4d9eff', d: 8300 },
+    { t: '  Critical visibility gaps found', color: '#febc2e', d: 7800 },
+    { t: '  Get in touch to see your scores', color: '#4d9eff', d: 8300 },
     { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.5)', d: 8700 },
   ];
   const out = document.getElementById('term-out');
