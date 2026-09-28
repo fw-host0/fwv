@@ -539,10 +539,15 @@
     .score-card.overall .score-label { color: rgba(255,255,255,0.55); }
 
     /* METHODOLOGY */
-    .method-section { background: var(--black); color: var(--white); }
+    .method-section { background: var(--white); color: var(--black); }
     .method-section .eyebrow { color: var(--accent); }
     #how-we-work .eyebrow { color: var(--accent); }
-    .method-section .section-title { color: var(--white); }
+    /* DARK PROCESS + HOW WE WORK */
+    #process, #how-we-work { background: var(--black); color: var(--white); }
+    #process .section-title, #how-we-work .section-title { color: var(--white); }
+    #process .eyebrow { color: var(--accent); }
+    #process .step-desc, #how-we-work .step-desc { color: rgba(255,255,255,0.7); }
+    .method-section .section-title { color: var(--black); }
 
     .method-grid {
       display: grid;
@@ -553,7 +558,7 @@
 
     .method-item {
       padding: 2rem 2rem 2rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(15,15,15,0.08);
     }
 
     .method-item:nth-child(n+3) { border-bottom: none; }
@@ -561,7 +566,7 @@
     .method-num {
       font-size: 3rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--black);
       letter-spacing: -0.04em;
       line-height: 1;
       margin-bottom: 0.35rem;
@@ -570,7 +575,7 @@
     .method-num-label {
       font-family: var(--mono);
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.3);
+      color: rgba(15,15,15,0.45);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-bottom: 1rem;
@@ -578,7 +583,7 @@
 
     .method-desc {
       font-size: 1rem;
-      color: rgba(255,255,255,0.85);
+      color: rgba(15,15,15,0.75);
       line-height: 1.7;
       font-weight: 300;
     }
@@ -854,7 +859,7 @@
   </div>
 </section>
 
-<section class="section" id="how-we-work" style="background:#efeee9;">
+<section class="section" id="how-we-work">
   <div class="section-inner">
     <span class="eyebrow">// How we work together</span>
     <h2 class="section-title">Simple, transparent process.</h2>
