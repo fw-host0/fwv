@@ -711,7 +711,9 @@
 
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
+      .nav-links { gap: 0; }
+      .nav-links li { display: none; }
+      .nav-links li:last-child { display: block; }
       #hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; gap: 3rem; }
       .section { padding: 4rem 1.5rem; }
       .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
@@ -747,8 +749,8 @@
       <h1 class="hero-headline">When buyers ask AI who to hire, your brand should be the <span class="blue">answer.</span></h1>
       <p class="hero-sub">Most businesses are invisible to ChatGPT, Claude, Perplexity, and Gemini. I find out exactly where you stand in their answers, then fix it.</p>
       <div class="hero-actions">
-        <a href="https://drive.google.com/file/d/1Z8mj6NYbt-3B1UXKvLSFSTZ4b1kMXEH9/view?usp=sharing" target="_blank" class="btn-primary">Read the case study →</a>
-        <a href="#cta" style="display:inline-block;background:var(--black);color:var(--white);padding:0.85rem 1.75rem;border-radius:4px;text-decoration:none;font-size:1rem;font-weight:600;transition:opacity 0.2s;font-family:var(--display);">Get your audit</a>
+        <a href="#cta" class="btn-primary">Get your audit →</a>
+        <a href="https://drive.google.com/file/d/1Z8mj6NYbt-3B1UXKvLSFSTZ4b1kMXEH9/view?usp=sharing" target="_blank" rel="noopener" style="display:inline-block;background:var(--black);color:var(--white);padding:0.85rem 1.75rem;border-radius:4px;text-decoration:none;font-size:1rem;font-weight:600;transition:opacity 0.2s;font-family:var(--display);">Read the case study</a>
       </div>
     </div>
     <div class="terminal">
@@ -969,9 +971,9 @@
           <div class="score-vals">
             <span class="score-before">16%</span>
             <span class="score-arrow">→</span>
-            <span class="score-after">49.5%</span>
+            <span class="score-after">47%</span>
           </div>
-          <p class="score-label">Up from a 16% baseline · re-audit September 2026</p>
+          <p class="score-label">ChatGPT, Claude, and Perplexity average · re-audit September 2026</p>
         </div>
       </div>
     </div>
