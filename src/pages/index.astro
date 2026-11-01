@@ -735,7 +735,7 @@
     #about .section-title { color: var(--white); }
     .about-grid { display: grid; grid-template-columns: 220px 1fr; gap: 3rem; align-items: center; max-width: 900px; margin-top: 2rem; }
     .about-photo { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; }
-    .about-copy p { color: rgba(255,255,255,0.85); font-size: 1.125rem; line-height: 1.7; margin: 0 0 1rem; }
+    .about-copy p { color: rgba(255,255,255,0.85); font-size: 1.125rem; line-height: 1.7; margin: 0 0 1rem; max-width: 60ch; text-wrap: pretty; }
     .about-copy p:last-child { margin-bottom: 0; }
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -996,9 +996,9 @@
 <section class="section" id="about">
   <div class="section-inner">
     <span class="eyebrow">// About</span>
-    <h2 class="section-title">Hi, I’m Fisher Walling.</h2>
+    <h2 class="section-title">I’m Fisher Walling.</h2>
     <div class="about-grid">
-      <img src="/about.jpg" alt="Fisher Walling" class="about-photo" width="220" height="220" />
+      <img src="/fisher.jpg" alt="Fisher Walling" class="about-photo" width="220" height="220" />
       <div class="about-copy">
         <p>I built my own audit tools to measure how often ChatGPT, Claude, Perplexity, and Gemini recommend a business, because I couldn’t find a way to measure it that I trusted.</p>
         <p>My first project was for ZenFounder, my mom’s company, which went from 16% to 47% AI visibility in two months. Now I do the same work for founders and small businesses.</p>
