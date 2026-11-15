@@ -8,7 +8,7 @@
   <meta property="og:url" content="https://fwvisibility.com/" />
   <meta name="generator" content={Astro.generator} />
   <title>FW Visibility · AI Visibility Optimization</title>
-  <meta name="description" content="I audit your brand's visibility across ChatGPT, Claude, Perplexity, and Gemini, and build the content strategy to move the needle. Data-driven AI visibility optimization for founders and SaaS companies." />
+  <meta name="description" content="I measure how often ChatGPT, Claude, Perplexity, and Gemini name your business when buyers ask who to hire, then fix the gaps. Audits from $250." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -759,6 +759,10 @@
     .cta-section .af-done p { color: var(--muted); margin: 0; max-width: none; }
     .cta-section .af-done .af-done-title { font-size: 1.4rem; font-weight: 700; color: var(--black); margin-bottom: 0.35rem; }
     @media (max-width: 600px) { .af-row { grid-template-columns: 1fr; } .audit-form, .af-done { padding: 1.5rem; } }
+      /* proof line under the hero buttons */
+    .hero-proof { margin-top: 1.5rem; font-size: 1.05rem; color: var(--muted); line-height: 1.6; max-width: 460px; }
+    .hero-proof a { color: var(--accent); text-decoration: none; font-weight: 600; white-space: nowrap; }
+    .hero-proof a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -778,11 +782,12 @@
   <section id="hero">
     <div>
       <h1 class="hero-headline">When buyers ask AI who to hire, your brand should be the <span class="blue">answer.</span></h1>
-      <p class="hero-sub">Most businesses are invisible to ChatGPT, Claude, Perplexity, and Gemini. I find out exactly where you stand in their answers, then fix it.</p>
+      <p class="hero-sub">I ask ChatGPT, Claude, Perplexity, and Gemini the questions your buyers ask, 400 times in all, and show you how often they name you. Then I fix the gaps.</p>
       <div class="hero-actions">
-        <a href="#cta" class="btn-primary">Get your audit →</a>
+        <a href="#cta" class="btn-primary">Get your $250 audit →</a>
         <a href="https://drive.google.com/file/d/1yGX7WL2D77bo9RsZcyivM1brU6TbNMOf/view?usp=drive_link" target="_blank" rel="noopener" style="display:inline-block;background:var(--black);color:var(--white);padding:0.85rem 1.75rem;border-radius:4px;text-decoration:none;font-size:1rem;font-weight:600;transition:opacity 0.2s;font-family:var(--display);">Read the case study</a>
       </div>
+      <p class="hero-proof">ZenFounder went from 16% to 49.5% AI visibility in 2 months. <a href="#case-study">See the results →</a></p>
     </div>
     <div class="terminal">
       <div class="terminal-bar">
@@ -799,12 +804,12 @@
 <section class="section problem-section" id="problem">
   <div class="section-inner">
     <span class="eyebrow">// The problem</span>
-    <h2 class="section-title">Google rankings and AI citations are two completely different games.</h2>
+    <h2 class="section-title">Ranking on Google doesn&rsquo;t mean AI will name you.</h2>
     <div class="problem-grid">
       <div class="problem-copy">
         <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;font-weight:300;line-height:1.7;margin-bottom:1.25rem;">66% of B2B professionals who use AI at work regularly use it to research vendors and solutions (Semrush, 2026).</p>
-        <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;font-weight:300;line-height:1.7;margin-bottom:1.25rem;">28.3% of ChatGPT's most-cited pages have zero Google organic visibility (Ahrefs, 2025). That means your Google rank tells you surprisingly little about your AI visibility. They're completely separate discovery layers.</p>
-        <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;font-weight:300;line-height:1.7;margin-bottom:1.25rem;">Most businesses have no idea where they stand in AI search. I built my own tools to measure it, and a process to fix it.</p>
+        <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;font-weight:300;line-height:1.7;margin-bottom:1.25rem;">28.3% of ChatGPT's most-cited pages have zero Google organic visibility (Ahrefs, 2025). So a good Google rank doesn't tell you what AI says about you.</p>
+        <p style="color:rgba(255,255,255,0.85);font-size:1.125rem;font-weight:300;line-height:1.7;margin-bottom:1.25rem;">You can check your Google rank in a minute. Seeing what AI says about you takes 400 answers, so I built tools to do it.</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:2.5rem;display:flex;flex-direction:column;justify-content:center;">
         <p style="font-size:clamp(2.25rem, 7vw, 3.5rem);font-weight:700;color:var(--accent-light);line-height:1;margin-bottom:1rem;letter-spacing:-0.02em;">23x higher conversions</p>
@@ -833,15 +838,12 @@
         <p class="service-desc">400 AI answers across ChatGPT, Claude, Perplexity, and Gemini. You find out exactly where you're visible, where you're not, and why.</p>
         <div class="service-price">$250 <span>one-time</span></div>
         <ul class="service-list">
-          <li>20 prompts, each run 5 times on every platform</li>
-          <li>Per-prompt visibility breakdown</li>
-          <li>Visibility gap analysis</li>
-          <li>Breakdown of who's being cited instead</li>
-          <li>The exact searches each AI runs</li>
-          <li>Google and Bing check: are your pages indexed, and where do they rank for those searches?</li>
-          <li>Content and citation recommendations</li>
-          <li>PDF audit report</li>
-          <li>The $250 comes off your project price if you hire me to fix what it finds</li>
+          <li>20 buyer questions, each asked 5 times on all 4 AI tools</li>
+          <li>Which questions you show up for, and which you're missing from</li>
+          <li>Who AI names instead of you, and which sites it cites</li>
+          <li>The searches each AI runs, and whether your pages show up on Google and Bing for them</li>
+          <li>What to write and fix first</li>
+          <li>A PDF report within 2 weeks. The $250 comes off your project price if you hire me.</li>
         </ul>
       </div>
       <div class="service-card">
@@ -849,13 +851,13 @@
         <h3 class="service-name">Visibility Project</h3>
         <p class="service-desc">I fix the gaps your audit found. Before I start, we agree on exactly what I'll do and what it costs, so there are no surprises.</p>
         <div class="service-price">$4,000+ <span>per project</span></div>
-        <div style="margin-bottom:1.5rem;padding:1rem 1.25rem;background:#eef2ff;border-left:3px solid var(--accent);border-radius:4px;"><p style="font-family:var(--mono);font-size:0.875rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin:0 0 0.4rem;">For ZenFounder</p><p style="margin:0;font-size:1.125rem;font-weight:400;line-height:1.6;color:var(--black);">Visibility tripled in two months. Claude, Gemini, and Perplexity now cite the articles I wrote, often near the top of their answers.</p></div>
+        <div style="margin-bottom:1.5rem;padding:1rem 1.25rem;background:#eef2ff;border-left:3px solid var(--accent);border-radius:4px;"><p style="font-family:var(--mono);font-size:0.875rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin:0 0 0.4rem;">For ZenFounder</p><p style="margin:0;font-size:1.125rem;font-weight:400;line-height:1.6;color:var(--black);">16% to 49.5% AI visibility in 2 months. Claude, Gemini, and Perplexity now cite the articles I wrote, often near the top of their answers.</p></div>
         <ul class="service-list">
           <li>In-depth articles aimed at questions where AI never names you, built to get cited, with your credentials and press in plain text AI can read</li>
           <li>FAQ sections for your service pages</li>
-          <li>Press citation integration</li>
-          <li>YouTube embeds</li>
-          <li>Indexing, on-page, and crawlability fixes (Google Search Console, Bing Webmaster Tools)</li>
+          <li>Links to your press coverage on your key pages</li>
+          <li>Your YouTube videos embedded in the articles AI reads</li>
+          <li>Fixes so Google, Bing, and AI tools can find and read your pages</li>
           <li>Re-audit after launch to measure results</li>
         </ul>
       </div>
@@ -867,12 +869,12 @@
 <section class="section" id="process">
   <div class="section-inner">
     <span class="eyebrow">// Process</span>
-    <h2 class="section-title">How I move the needle.</h2>
+    <h2 class="section-title">From audit to re-audit in 4 steps.</h2>
     <div class="process-grid">
       <div class="process-step">
         <p class="step-num">// 01</p>
         <h3 class="step-title">Audit</h3>
-        <p class="step-desc">I research 20 high-intent buyer questions for your business, then run each one through all four models. Each prompt is run five times to accurately measure your visibility with 400 API calls. You get a visibility score, a per-prompt breakdown, and the exact searches each AI runs.</p>
+        <p class="step-desc">I research 20 high-intent buyer questions for your business, then ask each one 5 times on all 4 AI tools, 400 answers in all. You get a visibility score, a breakdown by question, and the exact searches each AI runs.</p>
       </div>
       <div class="process-step">
         <p class="step-num">// 02</p>
@@ -882,7 +884,7 @@
       <div class="process-step">
         <p class="step-num">// 03</p>
         <h3 class="step-title">Execute</h3>
-        <p class="step-desc">I write the targeted articles, FAQ sections, press citations, and YouTube embeds. You approve everything, and I publish it. I also fix your site and indexing so search engines, and the AI tools that rely on them, can actually find your pages.</p>
+        <p class="step-desc">I write the articles and FAQ sections, link your press coverage, and embed your YouTube videos. You approve everything, and I publish it. I also fix your site and indexing so search engines, and the AI tools that rely on them, can actually find your pages.</p>
       </div>
       <div class="process-step">
         <p class="step-num">// 04</p>
@@ -897,7 +899,7 @@
 <section class="section method-section" id="methodology">
   <div class="section-inner">
     <span class="eyebrow">// Why it works</span>
-    <h2 class="section-title">Built on research. Not assumptions.</h2>
+    <h2 class="section-title">I write the kind of pages AI cites.</h2>
     <div class="method-grid">
       <div class="method-item">
         <p class="method-num">43.8%</p>
@@ -907,7 +909,7 @@
       <div class="method-item">
         <p class="method-num">25.7%</p>
         <p class="method-num-label">fresher content</p>
-        <p class="method-desc">Pages AI cites are 25.7% fresher on average than Google&rsquo;s regular results (Ahrefs, 2025). ChatGPT leans hardest toward new content, so every page I write is built to stay current.</p>
+        <p class="method-desc">Pages AI cites are 25.7% fresher on average than Google&rsquo;s regular results (Ahrefs, 2025). ChatGPT leans hardest toward new content, so my projects focus on publishing new pages, not just tweaking old ones.</p>
       </div>
     </div>
   </div>
@@ -916,7 +918,7 @@
 <section class="section" id="how-we-work">
   <div class="section-inner">
     <span class="eyebrow">// How we work together</span>
-    <h2 class="section-title">Simple, transparent process.</h2>
+    <h2 class="section-title">What working with me looks like.</h2>
     <div class="process-grid" style="margin-top:2rem;">
       <div class="process-step">
         <p class="step-num">// Approval</p>
@@ -931,12 +933,12 @@
       <div class="process-step">
         <p class="step-num">// Billing</p>
         <h3 class="step-title">Fixed price, agreed up front</h3>
-        <p class="step-desc">After your audit, I quote a fixed price based on what it found. No retainers and no minimums. If you go ahead, your $250 audit fee counts toward the project.</p>
+        <p class="step-desc">After your audit, I quote a fixed price based on what it found. No retainer. If you go ahead, your $250 audit fee counts toward the project.</p>
       </div>
       <div class="process-step">
         <p class="step-num">// Communication</p>
         <h3 class="step-title">Quick decisions, no extra meetings</h3>
-        <p class="step-desc">We'll work over email or Slack. When I need a decision on your content, I'll send everything you need to approve it in a few minutes, and I ask for replies within two business days so the project keeps moving.</p>
+        <p class="step-desc">We'll work over email or Slack. When I need a decision on your content, I'll send everything you need to approve it in a few minutes, and I ask for replies within 2 business days so the project keeps moving.</p>
       </div>
     </div>
   </div>
@@ -944,19 +946,19 @@
 <section class="section case-section" id="case-study">
   <div class="section-inner">
     <span class="eyebrow">// Case study · ZenFounder</span>
-    <h2 class="section-title">From invisible to recommended.</h2>
+    <h2 class="section-title">16% to 49.5% in 2 months.</h2>
     <div class="case-grid">
       <div class="case-copy">
-        <p>Dr. Sherry Walling is a clinical psychologist who's spent over a decade working with startup founders. She hosts the ZenFounder podcast (1M+ downloads), writes for Fortune and Entrepreneur, and has been featured in the New York Times.</p>
-        <p>Despite being one of the most credentialed practitioners in her niche, she was scoring just 16% overall AI visibility across ChatGPT, Claude, and Perplexity.</p>
+        <p>ZenFounder is my mom&rsquo;s company. Dr. Sherry Walling is a clinical psychologist who's spent over a decade working with startup founders. She hosts the ZenFounder podcast (1M+ downloads), writes for Fortune and Entrepreneur, and has been featured in the New York Times.</p>
+        <p>Even with all that, AI named her in just 16% of answers on ChatGPT, Claude, and Perplexity.</p>
         <blockquote class="case-quote">She was the right answer to questions AI wasn't citing her for.</blockquote>
-        <p>Full audit, zero-visibility prompt identification, targeted content strategy with press citation integration, FAQ optimization, and YouTube embed strategy. Results tracked across 400 API calls per cycle.</p>
+        <p>What I did: wrote articles for the questions where AI never named her, added FAQ sections, put her press and videos on the pages AI reads, and fixed indexing. Then I re-ran the audit.</p>
         <div class="score-card" style="margin-top:1.75rem;">
-          <p class="score-platform">Conversion signal</p>
+          <p class="score-platform">Leads</p>
           <div class="score-vals">
             <span class="score-after">+160%</span>
           </div>
-          <p class="score-label">Lead volume (through client form submissions) rose 160% after the new content went live, tracking the same trajectory as her visibility scores.</p>
+          <p class="score-label">Form submissions rose 160% after the new content went live. I can&rsquo;t prove the content caused it, but it rose along with her visibility scores.</p>
         </div>
         <a href="https://drive.google.com/file/d/1yGX7WL2D77bo9RsZcyivM1brU6TbNMOf/view?usp=drive_link" target="_blank" rel="noopener" class="btn-primary" style="margin-top:2rem;">Read the full case study →</a>
       </div>
@@ -1004,7 +1006,7 @@
             <span class="score-arrow">→</span>
             <span class="score-after">49.5%</span>
           </div>
-          <p class="score-label">Up from a 16% baseline · re-audit September 2026</p>
+          <p class="score-label">Baseline on ChatGPT, Claude, and Perplexity. Gemini first measured in the September 2026 re-audit.</p>
         </div>
       </div>
     </div>
@@ -1019,15 +1021,15 @@
       <img src="/fisher.jpg" alt="Fisher Walling" class="about-photo" width="220" height="220" />
       <div class="about-copy">
         <p>I built my own audit tools to measure how often ChatGPT, Claude, Perplexity, and Gemini recommend a business, because I couldn’t find a way to measure it that I trusted.</p>
-        <p>My first project was for ZenFounder, my mom’s company, which went from 16% to 49.5% AI visibility in two months. Now I do the same work for founders and small businesses.</p>
+        <p>My first project was for ZenFounder, my mom’s company, which went from 16% to 49.5% AI visibility in 2 months. Now I do the same work for founders and small businesses.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="cta-section" id="cta">
-  <h2>Find out where AI stands on your brand.</h2>
-  <p>Tell me a bit about your business, and I&rsquo;ll get back to you within one business day.</p>
+  <h2>Find out how often AI names you.</h2>
+  <p>Tell me what you sell and who buys it. I&rsquo;ll reply within 1 business day, and your report is ready within 2 weeks.</p>
   <form id="audit-form" class="audit-form" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="c5e28c39-13dd-4c00-921d-0fdf895208f6" />
     <input type="hidden" name="subject" value="New audit request from fwvisibility.com" />
@@ -1044,7 +1046,7 @@
   </form>
   <div id="audit-form-done" class="af-done" hidden>
     <p class="af-done-title">Thanks, got it.</p>
-    <p>I&rsquo;ll reply within one business day.</p>
+    <p>I&rsquo;ll reply within 1 business day.</p>
   </div>
 </section>
 
@@ -1075,9 +1077,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { t: '... running 392 more checks ...', color: 'rgba(255,255,255,0.95)', d: 6300 },
     { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.5)', d: 6800 },
     { t: 'AUDIT COMPLETE: [your brand]', color: '#febc2e', d: 7100 },
-    { t: '  Scanning results...', color: '#febc2e', d: 7400 },
-    { t: '  Critical visibility gaps found', color: '#ff4444', d: 7800 },
-    { t: '  Get in touch to see your scores', color: '#4d9eff', d: 8300 },
+    { t: '  Your visibility score: ??%', color: '#febc2e', d: 7500 },
+    { t: '  Request an audit to see yours', color: '#4d9eff', d: 8100 },
     { t: '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', color: 'rgba(255,255,255,0.5)', d: 8700 },
   ];
   const out = document.getElementById('term-out');
