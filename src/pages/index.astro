@@ -741,6 +741,24 @@
       .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .about-photo { width: 160px; height: 160px; }
     }
+      /* audit form in the blue CTA */
+    .audit-form { max-width: 560px; margin: 0 auto; text-align: left; background: var(--white); border-radius: 8px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .af-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .af-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .af-field span { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .af-field input, .af-field textarea { font-family: var(--display); font-size: 1rem; color: var(--black); background: #fff; border: 1px solid rgba(15,15,15,0.2); border-radius: 4px; padding: 0.75rem 0.9rem; width: 100%; }
+    .af-field textarea { resize: vertical; min-height: 5.5rem; }
+    .af-field input:focus, .af-field textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+    .af-submit { font-family: var(--display); font-size: 1rem; font-weight: 600; color: var(--white); background: var(--accent); border: none; border-radius: 4px; padding: 0.9rem 1.75rem; cursor: pointer; transition: opacity 0.2s; }
+    .af-submit:hover { opacity: 0.85; }
+    .af-submit:disabled { opacity: 0.6; cursor: default; }
+    .cta-section .af-note { font-size: 0.95rem; color: var(--muted); margin: 0; max-width: none; line-height: 1.6; }
+    .af-trap { position: absolute; left: -9999px; }
+    .audit-form[hidden], .af-done[hidden] { display: none; }
+    .af-done { max-width: 560px; margin: 0 auto; background: var(--white); border-radius: 8px; padding: 2rem; }
+    .cta-section .af-done p { color: var(--muted); margin: 0; max-width: none; }
+    .cta-section .af-done .af-done-title { font-size: 1.4rem; font-weight: 700; color: var(--black); margin-bottom: 0.35rem; }
+    @media (max-width: 600px) { .af-row { grid-template-columns: 1fr; } .audit-form, .af-done { padding: 1.5rem; } }
   </style>
 </head>
 <body>
@@ -1009,8 +1027,25 @@
 
 <section class="cta-section" id="cta">
   <h2>Find out where AI stands on your brand.</h2>
-  <p>Start with an audit. You'll know exactly how visible you are across ChatGPT, Claude, Perplexity, and Gemini.</p>
-  <a href="mailto:fisher@fwvisibility.com" class="btn-white">Get your audit →</a>
+  <p>Tell me a bit about your business, and I&rsquo;ll get back to you within one business day.</p>
+  <form id="audit-form" class="audit-form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="c5e28c39-13dd-4c00-921d-0fdf895208f6" />
+    <input type="hidden" name="subject" value="New audit request from fwvisibility.com" />
+    <input type="hidden" name="from_name" value="FW Visibility site" />
+    <input type="checkbox" name="botcheck" class="af-trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <div class="af-row">
+      <label class="af-field"><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
+      <label class="af-field"><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
+    </div>
+    <label class="af-field"><span>Website</span><input type="text" name="website" placeholder="yourcompany.com" autocomplete="url" required /></label>
+    <label class="af-field"><span>What do you sell, and who buys it?</span><textarea name="business" rows="3" required></textarea></label>
+    <button type="submit" class="af-submit">Request my audit &rarr;</button>
+    <p class="af-note">Audits are $250, and the fee comes off your project price if you hire me to fix what it finds.</p>
+  </form>
+  <div id="audit-form-done" class="af-done" hidden>
+    <p class="af-done-title">Thanks, got it.</p>
+    <p>I&rsquo;ll reply within one business day.</p>
+  </div>
 </section>
 
 <footer>
@@ -1058,6 +1093,31 @@ document.addEventListener('DOMContentLoaded', () => {
       out.appendChild(cursor);
       out.scrollTop = out.scrollHeight;
     }, d);
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('audit-form');
+  const done = document.getElementById('audit-form-done');
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.af-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || 'failed');
+      form.hidden = true;
+      done.hidden = false;
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = 'Request my audit &rarr;';
+      alert('Something went wrong. Please email me at fisher@fwvisibility.com instead.');
+    }
   });
 });
 </script>
